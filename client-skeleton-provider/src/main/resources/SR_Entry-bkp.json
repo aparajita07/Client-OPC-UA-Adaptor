@@ -1,0 +1,81 @@
+{
+  "Factory": "Fischer-Technik",
+  "Services":[
+    {
+      "ServiceDef": "I1_Push-button_LoadingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "I2_Push-button_LoadingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "I3_Push-button_OffLoadingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "I4_Push-button_LoadingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "I5_Phototransistor_LoadingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "I6_Phototransistor_MillingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "I7_Phototransistor_LoadingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "I8_Phototransistor_DrillingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "I9_Phototransistor_OffLoadingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "Q1_Motor-Slider_LoadingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "Q2_Motor-Slider_LoadingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "Q3_Motor-Slider_OffLoadingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "Q4_Motor-Slider_OffLoadingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "Q5_Motor-Conveyor-Belt_LoadingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "Q6_Motor-Conveyor-Belt_MillingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "Q7_Motor_MillingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "Q8_Motor-Conveyor-Belt_DrillingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "Q9_Motor_DrillingStation",
+      "Status": []
+    },
+    {
+      "ServiceDef": "Q10_Motor-Conveyor-Belt_OffLoadingStation",
+      "Status": []
+    }
+  ]
+}
