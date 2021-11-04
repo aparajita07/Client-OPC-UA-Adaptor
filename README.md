@@ -1,5 +1,5 @@
 # Client-OPC-UA-Adaptor
-This project provides the possibility to integrate an existing OPC-UA Server with Consumers in an [Arrowhead Framework](http://github.com/arrowhead-f) local cloud. It is based on the [Eclipse Milo (tm)](https://github.com/eclipse/milo) OPC-UA stack and the [Client Skeletons](https://github.com/arrowhead-f/client-skeleton-java-spring) for the [Arrowhead Framework 4.1.3](https://github.com/arrowhead-f/core-java-spring).
+This project provides the possibility to integrate an existing OPC-UA Server with a Provider client in an [Arrowhead Framework](http://github.com/eclipse-arrowhead) local cloud. It is based on the [Eclipse Milo (tm)](https://github.com/eclipse/milo) OPC-UA stack and the [Client Skeletons](https://github.com/arrowhead-f/client-skeleton-java-spring) for the [Arrowhead Framework 4.2.0](https://github.com/eclipse-arrowhead/core-java-spring).
 
 This repository has an example Provider and Consumer. The Provider allows Consumers to read and write OPC-UA Variable nodes in an OPC-UA Server using a REST API. When the Provider is started it will:
 
