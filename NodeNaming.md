@@ -1,7 +1,7 @@
 # OPC UA Node Naming Convention
 There are 5 metadata keys associated with each service instances of the "SignalStatus" and "SignalUpdate" services.
 The metadata keys are "NodeId", "Device", "DeviceType", "Location" and "http-method".
-Hence, all nodes follow the naming structure as <DeviceId>_<DeviceType>_<Location>. {$<$ComponentID$>\_<$ComponentType$>\_<$Location$>$}
+Hence, all nodes follow the naming structure as {<DeviceID>_<DeviceType>_<Location>}.
   
 ## Note
 Here, the naming convention for OPC UA nodes is informal and self-derived.
