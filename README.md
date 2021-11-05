@@ -14,8 +14,6 @@ The service definition for each read service instance will be "SignalStatus" and
 6. Respond to incoming traffic to the REST API for all three services.
 
 The example Consumer queries the Orchestrator for the "SignalStatus" service and gets the endpoints of all 19 service instances(9 sensor nodes and 10 actuator nodes). It gets the node identifier value from the metadata key "NodeId" of the orchestration response, and uses that in the query parameter while sending the service request to the Provider. For the "plantstructure" service, the Consumer does not need to send any query parameters to access the Provider's REST API. While consuming "SignalUpdate" service, along with the "NodeId", the Consumer needs to send "value" (String value "true"/"false") in the query parameters.
- 
-NOTE! The code provided in this repository is provided only as a skeleton/starting point and needs to be extended to fit the application at hand.
 
 ## How to use
 
