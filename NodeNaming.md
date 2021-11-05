@@ -8,7 +8,7 @@ The names of the nodes is presented in the figure below.
 ![alt text](https://github.com/aparajita07/Client-OPC-UA-Adaptor/blob/main/OPCUAClient.PNG)
   
 The logic behind deriving metadata of service instance associated with a particular node is:
-* If the /<DeviceID> starts with "I", "Device"= "Sensor", else "Device"= "Actuator".
+* If the \<DeviceID> starts with "I", metadata key "Device"= "Sensor", else "Device"= "Actuator".
 * The metadata key "DeviceType" is the \<DeviceType> part of the name.
 * The metadata key "Location" is the \<Location> part of the name.
 * The metadata "NodeId" is derived from the *NodeId* object.
