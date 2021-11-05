@@ -5,7 +5,7 @@ Hence, all nodes follow the naming structure as  \<DeviceID>\_\<DeviceType>\_\<L
 
 The names of the nodes is presented in the figure below.
 
-![alt text](master/OPCUAClient.PNG)
+![alt text](https://github.com/aparajita07/Client-OPC-UA-Adaptor/edit/main/OPCUAClient.PNG)
   
 ## Note
 Here, the naming convention for OPC UA nodes is informal and self-derived.
