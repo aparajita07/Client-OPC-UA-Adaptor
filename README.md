@@ -1,11 +1,16 @@
 # Client-OPC-UA-Adaptor
-This project provides the possibility to integrate an existing OPC-UA Server with a Provider client in an [Arrowhead Framework](http://github.com/eclipse-arrowhead) local cloud. It is based on the [Eclipse Milo (tm)](https://github.com/eclipse/milo) OPC-UA stack and the [Client Skeletons](https://github.com/arrowhead-f/client-skeleton-java-spring) for the [Arrowhead Framework 4.2.0](https://github.com/eclipse-arrowhead/core-java-spring).
-
-This repository has an example Provider and Consumer. The Provider allows Consumers to read and write OPC-UA Variable nodes in an OPC-UA Server using a REST API. When the Provider is started it will:
+This project provides the possibility to integrate an existing OPC-UA Server with a Provider client in an [Arrowhead Framework](http://github.com/eclipse-arrowhead) local cloud with customized changes to the service registry that allows the provider to register multiple service instances with same service definition.
+This SR changes will be available in release 4.4.
+This adaptor is based on the [Eclipse Milo (tm)](https://github.com/eclipse/milo) OPC-UA stack and the [Client Skeletons](https://github.com/arrowhead-f/client-skeleton-java-spring) for the [Arrowhead Framework 4.2.0](https://github.com/eclipse-arrowhead/core-java-spring).
+This repository has an example Provider and Consumer. The Provider allows Consumers to read and write OPC-UA Variable nodes in an OPC-UA Server using a REST API.
+To implement this system, we used a fischertecknik indexed line factory with an inbuilt OPC UA server of 9 sensor nodes and 10 actuator nodes.
+When the Provider is started it will:
 
 1. Connect to an OPC-UA server using connection details found in /src/main/resources/application.properties. 
-2. Browse all Variable nodes beneath a given "root" node (also provided in application.properties), and register read/write services for all OPC-UA Variables nodes beneath this "root" Node to the Service Registry. The service definition for each will be prefixed with read_ or write_ (e.g. read_myVariable or write_myVariable). The term "root" is chosen here since no nodes above this node in the OPC-UA hierarchy will be added to the service registry making it the top level object.
-3. Respond to incoming traffic to the REST API read/write services.
+2. Browse all Variable nodes beneath a given "root" node (also provided in application.properties), and register read/write services for all OPC-UA Variables nodes beneath this "root" Node to the Service Registry. 
+The service definition for each read service will be "SignalStatus" and for each write service it is "SignalUpdate". The term "root" is chosen here since no nodes above this node in the OPC-UA hierarchy will be added to the service registry making it the top level object.
+3. Apart from the read/write services, the provider also registers a "plantstructure" service, which provides the metadata of all available nodes in a JSON format. The consumer needs to access this service in case it wants to perform orchestration using metadata.
+3. Respond to incoming traffic to the REST API for all three services.
 
 The example Consumer queries the Orchestrator for an OPC-UA Variable (beneath the chosen "root" node) to read or write, using the read_ or write_ prefix (e.g. write_myVariable) and receives the REST API endpoint (Service URI) for this service. When writing a variable, add your desired value to a query parameter named "value". The provided value will be cast to the proper variable type (as defined in the target OPC-UA Variable node). When using a read-service, leave the "value" query parameter empty. 
  
@@ -19,6 +24,7 @@ NOTE! The code provided in this repository is provided only as a skeleton/starti
 * Arrowhead core services running, for more info goto [Arrowhead Framework 4.1.3](https://github.com/arrowhead-f/core-java-spring)
 * To run the example Provider and Consumer, your OPC-UA Server should be configured with no security mode and no security policy. You can later add your own desired OPC-UA security using the [Eclipse Milo Stack](https://github.com/eclipse/milo) which this repository is based on.
 * All variables below the chosen "root" node in the OPC-UA server should be both readable and writeable.
+* The name of each node should follow a specific pattern such that the metadata for each service instance is derived from the node name. Refer [this](https://github.com/aparajita07/Client-OPC-UA-Adaptor/blob/main/NodeNaming.md) to name your nodes.
 
 
 ### Setup and run
