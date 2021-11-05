@@ -8,7 +8,7 @@ When the Provider is started it will:
 
 1. Connect to an OPC-UA server using connection details found in /src/main/resources/application.properties. 
 2. Browse all Variable nodes beneath a given "root" node (also provided in application.properties), and register read/write services for all OPC-UA Variables nodes beneath this "root" Node to the *ServiceRegistry*. 
-The service definition for each read service will be "SignalStatus" and for each write service it is "SignalUpdate". The term "root" is chosen here since no nodes above this node in the OPC-UA hierarchy will be added to the *ServiceRegistry* making it the top level object.
+The service definition for each read service instance will be "SignalStatus" and for each write service instance, it is "SignalUpdate". The term "root" is chosen here since no nodes above this node in the OPC-UA hierarchy will be added to the *ServiceRegistry* making it the top level object.
 3. Registers a "plantstructure" service, which provides the metadata of all available nodes in a JSON format. (The consumer needs to access this service in case it wants to perform orchestration using metadata)
 4. Monitors the root node every 15 seconds to track any changes in its node structure. In case of change, it updates the *ServiceRegistry* with the correct service information at runtime. Hence, changes to any existing node or the addition of new nodes are automatically registered in the Arrowhead cloud.
 6. Respond to incoming traffic to the REST API for all three services.
