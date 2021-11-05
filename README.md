@@ -1,7 +1,7 @@
 # Client-OPC-UA-Adaptor
 This project provides the possibility to integrate an existing OPC-UA Server with a Provider client in an [Arrowhead Framework](http://github.com/eclipse-arrowhead) local cloud with *ServiceRegistry* changes, that allows the provider to register multiple service instances with same service definition.
 This SR changes will be available in release 4.4.
-This adaptor is based on the [Eclipse Milo (tm)](https://github.com/eclipse/milo) OPC-UA stack and the [Client Skeletons](https://github.com/arrowhead-f/client-skeleton-java-spring) for the [Arrowhead Framework 4.2.0](https://github.com/eclipse-arrowhead/core-java-spring).
+This adaptor is based on the [Eclipse Milo (tm)](https://github.com/eclipse/milo) OPC-UA stack and the [Client Skeletons](https://github.com/arrowhead-f/client-skeleton-java-spring) for the [Arrowhead Framework 4.3.0](https://github.com/eclipse-arrowhead/core-java-spring).
 This repository has an example Provider and Consumer. The Provider allows Consumers to read and write OPC-UA Variable nodes in an OPC-UA Server using a REST API.
 To implement this system, we used a fischertecknik indexed line factory with an inbuilt OPC-UA server of 9 sensor nodes and 10 actuator nodes.
 When the Provider is started it will:
@@ -22,7 +22,7 @@ NOTE! The code provided in this repository is provided only as a skeleton/starti
 ### Requirements
 * Java JRE/JDK 11
 * Maven 3.5+
-* Arrowhead core services running, for more info goto [Arrowhead Framework 4.1.3](https://github.com/arrowhead-f/core-java-spring)
+* Arrowhead core services running, for more info goto [Arrowhead Framework 4.3.0](https://github.com/eclipse-arrowhead/core-java-spring)
 * To run the example Provider and Consumer, your OPC-UA Server should be configured with no security mode and no security policy. You can later add your own desired OPC-UA security using the [Eclipse Milo Stack](https://github.com/eclipse/milo) which this repository is based on.
 * All variables below the chosen "root" node in the OPC-UA server should be both readable and writeable.
 * The name of each node should follow a specific pattern such that the metadata for each service instance is derived from the node name. Refer [this](https://github.com/aparajita07/Client-OPC-UA-Adaptor/blob/main/NodeNaming.md) to name your OPC-UA nodes.
